@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/confirmationProgress"
+        layout="@layout/progress_horizontal"
+        android:visibility="gone"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/formConfirmBtn"
+        android:padding="20dp">
+        <LinearLayout
+            android:id="@+id/login_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/titleInput"
+                android:singleLine="true"
+                android:background="@android:color/transparent"
+                android:hint="@string/book_title_hint"
+                android:inputType="textCapWords"
+                style="@style/customEditText"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/colorAccent" />
+
+            <EditText
+                android:id="@+id/descriptionInput"
+                android:singleLine="true"
+                android:hint="@string/book_description_hint"
+                android:inputType="textCapWords|textMultiLine"
+                style="@style/customEditText"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/colorAccent" />
+
+            <EditText
+                android:id="@+id/coverInput"
+                android:singleLine="true"
+                android:hint="@string/book_cover_hint"
+                android:inputType="textUri"
+                style="@style/customEditText"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/formConfirmBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_bg"
+        android:padding="3dp"
+        android:text="@string/add"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="24dp"/>
+</RelativeLayout>
